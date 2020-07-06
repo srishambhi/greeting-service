@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +8,7 @@ import com.hello.hackathon.GreetingController;
 public class GreetingTest {
 
 	@Autowired
-	GreetingController greetingController;
+	GreetingController greetingController= new GreetingController();
 
 	@Before
 	public void init() {
@@ -16,7 +17,8 @@ public class GreetingTest {
 
 	@Test
 	public void testMakeBooking() {
-		greetingController.hello();
+		String res= greetingController.hello();
+		Assert.assertNotNull(res);
 
 	}
 
