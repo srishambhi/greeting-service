@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: greeting-service-gke
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: greeting-service
+  template:
+    metadata:
+      labels:
+        app: greeting-service
+    spec:
+      containers:
+      - name: greeting-service
+        # Replace $GCLOUD_PROJECT with your project ID
+        image: gcr.io/my-first-k8-project-280510/greeting-service
+        # This app listens on port 8080 for web traffic by default.
+        ports:
+        - containerPort: 9003
+        env:
+          - name: PORT
+            value: "9003"

@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  greeting-service-container:
+    image: greeting-service
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - /data/greeting-docker-compose-app
+    ports:
+      - "9003:9003"
