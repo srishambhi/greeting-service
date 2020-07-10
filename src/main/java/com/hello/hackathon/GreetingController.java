@@ -9,6 +9,6 @@ public class GreetingController
 @RequestMapping("/")  
 public String hello()   
 {  
-return "<h2>Hi <i>Infinity Labs</i> Team !! Hope you are enjoying this demo session on dokcer.. :) </h2>";  
+return "<h2>Hi <i>Infinity Labs</i> Team !! Hope you are enjoying this demo session on docker.. :) </h2>";  
 }  
 }  
